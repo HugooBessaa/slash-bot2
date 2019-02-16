@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const guildID = "546385232698408970";
-var memberCount = client.guilds.get(guildID).members.size()
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -21,7 +19,7 @@ client.on('message', message => {
         if (message.content === '+entrada') {
         message.channel.send({embed: {
   color: 0x4bf442,
-  description: "💚 Servidores SlashMC 💚\n\n📥 F0und_ entrou no servidor!\nAtualmente somos" + memberCount "membros!"
+  description: "💚 Servidores SlashMC 💚\n\n📥 F0und_ entrou no servidor!\nAtualmente somos membros!"
 }});
 });
 client.on('guildMemberAdd', member => {
