@@ -16,11 +16,6 @@ client.on('message', message => {
     if (message.content === 'O que fazer com um dominio?') {
     	message.channel.send('Faça igual ao Azalim, pegue nele e enfie no cu! 😆😆');
     }
-        if (message.content === '+entrada') {
-        message.channel.send({embed: {
-  color: 0x4bf442,
-  description: "💚 Servidores SlashMC 💚\n\n📥 F0und_ entrou no servidor!\nAtualmente somos membros!"
-}});
 });
 client.on('guildMemberAdd', member => {
     member.guild.channels.get('546432785666015348').send('**' + member.user.username + '**, juntou-se ao servidor que merda mano!'); 
