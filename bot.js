@@ -20,6 +20,7 @@ client.on('message', message => {
   color: 0x4bf442,
   description: ":green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: HugoBessaPT entrou no servidor!\nAtualmente somos" + memberCount "membros no servidor!"
 }});
+    }
     if (message.content === 'O que fazer com um dominio?') {
     	message.channel.send('Faça igual ao Azalim, pegue nele e enfie no cu! 😆😆');
     }
