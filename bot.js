@@ -9,7 +9,7 @@ function changing_status() {
 }
 
 client.on(ready, async guild => {
-  console.log( '© hawk);
+  console.log('funfando');
   setInterval(changing_status,10000);
 })
 
