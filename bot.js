@@ -22,8 +22,8 @@ client.on('message', async (message) => {
 		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
 		client.channels.get('546686267874869260').send({embed})
 	    .then(function (message) {
-          message.react('546686138316750859')
-          message.react('546686205224419348')
+          message.react('546684879153397779')
+          message.react('546684910446968843')
        		message.pin()
           message.delete()
     			});
