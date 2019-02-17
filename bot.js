@@ -1,9 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const FS = require('fs');
+
+function changing_status() {
+  let status = [`1`, `2`, `3`]
+  let random = status[Math.floor(Math.random() * status.length)]
+  client.user.setActivity(random)
+}
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity('jogar.redeslash.com', { type: 'PLAYING' });
+    setInterval(changing_status,10000);
 });
 
 client.on('message', message => {
