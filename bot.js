@@ -24,9 +24,9 @@ client.on('guildMemberAdd', member => {
         let count = 0;
         g.members.forEach((member) => {
             count++;
-            memberCount = count;
+            let membersCount = count;
         });
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + {memberCount} + '** membros no servidor!'); 
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + {membersCount} + '** membros no servidor!'); 
 });
 });
 });
@@ -37,8 +37,9 @@ client.on('guildMemberRemove', member => {
         let count = 0;
         g.members.forEach((member) => {
             count++;
+            let membersCount = count;
         });
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:outbox_tray: **' + member.user.username + '**, saiu do servidor!\nAtualmente somos **' + {memberCount} + '** membros no servidor!');
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:outbox_tray: **' + member.user.username + '**, saiu do servidor!\nAtualmente somos **' + {membersCount} + '** membros no servidor!');
 });
 });
 });
