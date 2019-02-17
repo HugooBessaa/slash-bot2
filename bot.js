@@ -20,11 +20,11 @@ client.on('message', async (message) => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
-		client.channels.get('546679416068243456').send({embed})
+		client.channels.get('546686267874869260').send({embed})
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
     
-  if (message.channel.id === "546679416068243456") {
+  if (message.channel.id === "546686267874869260") {
       message.react('546686138316750859')
           .then(() => { 
               message.react('546686205224419348')
@@ -42,11 +42,11 @@ client.on('message', async (message) => {
     }
 });
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **'+ member.user.username +'**, entrou no servidor!\n:slashontop: Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as #regras para não ser punido!'); 
+    member.guild.channels.get('546048881033609216').send(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **'+ member.user.username +'**, entrou no servidor!\n:slashontop: Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as #regras para não ser punido!'); 
 });
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart: \n\n:outbox_tray: **'+ member.user.username +'**, saiu no servidor!\n:slashontop: Infelizmente perdemos um membro!\nAconselhamos a ler as #regras para não ser punido!');
+    member.guild.channels.get('546048881033609216').send(':green_heart: Servidores SlashMC :green_heart: \n\n:outbox_tray: **'+ member.user.username +'**, saiu no servidor!\n:slashontop: Infelizmente perdemos um membro!\nAconselhamos a ler as #regras para não ser punido!');
 });
 
 // THIS  MUST  BE  THIS  WAY
