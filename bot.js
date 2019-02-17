@@ -3,14 +3,8 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity('jogar.redeslash.com', { type: 'PLAYING' });
 });
-
-public void onMessageReceived(MessageReceivedEvent event){
-    if(event.getMessage().getContentRaw().startsWith("!say")){
-        event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(6)).queue();
-        event.getMessage().delete().queue();
-    }
-}
 
 client.on('message', message => {
   if (message.channel.id === "546679416068243456") {
