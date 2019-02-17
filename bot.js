@@ -17,14 +17,6 @@ client.on('message', message => {
     	message.channel.send('Faça igual ao Azalim, pegue nele e enfie no cu! 😆😆');
     }
 });
-client.guilds.forEach((guild) => {
-    guild.fetchMembers().then(g => {
-        let count = 0;
-        g.members.forEach((member) => {
-            count++;
-        });
-      });
-    });
 
 client.on('guildMemberAdd', member => {
     client.guilds.forEach((guild) => {
@@ -33,8 +25,8 @@ client.on('guildMemberAdd', member => {
         g.members.forEach((member) => {
             count++;
         });
-    });
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + count + '** membros no servidor!'); 
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **'count'** membros no servidor!'); 
+  });
 });
 
 client.on('guildMemberRemove', member => {
