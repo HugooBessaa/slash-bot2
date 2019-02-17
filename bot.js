@@ -15,6 +15,7 @@ client.on('message', async (message) => {
 	let args = message.content.split(" ").slice(1);
     
     if(command === "sugestão") {
+	    if(args[0]]) return message.channel.send("Utilize +sugestão <sua sugestão>");
 		message.delete()
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
