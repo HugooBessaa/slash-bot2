@@ -1,13 +1,19 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const args =
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity(`Minecraft | +help`);
 });
 
 client.on('message', message => {
+  if (message.author.client || message.content.startWith("+")) return;
+    const args = message.content.slice("+".lenght).split(" ");
+    const command = args.shift().loLowerCase();
+   if(command == "say"){
+       if(!args[0]) return message.channel.send("Viado usa +say <texto>");
+       const saytxt = args.join(" ");
+       message.channel.send(saytxt);
+   }
   if (message.channel.id === "546679416068243456") {
       message.react('546686138316750859')
           .then(() => { 
