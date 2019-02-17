@@ -18,22 +18,14 @@ client.on('message', message => {
     }
 });
 
-   client.guilds.forEach((guild) => {
-    guild.fetchMembers().then(g => {
-        let count = 0;
-        g.members.forEach((member) => {
-            count++;
-        });
-        });
-        });
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + count + '** membros no servidor!'); 
+    var memberCount = (guild.members.filter(member => !member.user.bot).size).toString() + ‘ Members’;
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + memberCount + '** membros no servidor!'); 
 });
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:outbox_tray: **' + member.user.username + '**, saiu do servidor!\nAtualmente somos **' + count + '** membros no servidor!');
+    var memberCount = (guild.members.filter(member => !member.user.bot).size).toString() + ‘ Members’;
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:outbox_tray: **' + member.user.username + '**, saiu do servidor!\nAtualmente somos **' + memberCount + '** membros no servidor!');
 });
-
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
