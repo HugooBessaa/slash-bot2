@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity(random)
+    client.user.setActivity('jogar.redeslash.com')
 });
 
 client.on('message', message => {
