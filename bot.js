@@ -19,7 +19,7 @@ client.on('message', async (message) => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de " + message.author.username + " :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de " + message.author.username + "?");
-		client.channels.get('546432785666015348').send({embed})
+		client.channels.get('546679416068243456').send({embed})
 	}
     
   if (message.channel.id === "546679416068243456") {
