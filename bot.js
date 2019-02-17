@@ -14,11 +14,11 @@ client.on('message', async (message) => {
 	command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
     
-    if(command === "say") {
+    if(command === "sugestão") {
 		message.delete()
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
-		.setDescription("Mensagem de "+ message.author.username + ": " + args.join(" "));
+		.setDescription(":green_heart: :bulb: Sugestão de " + message.author.username + " :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de " + message.author.username + "?");
 		message.channel.send({embed})
 	}
     
