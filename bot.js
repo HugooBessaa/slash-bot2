@@ -20,6 +20,7 @@ client.on('message', async (message) => {
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de " + message.author.username + " :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de " + message.author.username + "?");
 		client.channels.get('546679416068243456').send({embed})
+	        message.channel.send(":green_heart: **" + message.author.user + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
     
   if (message.channel.id === "546679416068243456") {
