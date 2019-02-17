@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const args =
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity('Hello!');
+    client.user.setActivity("Hello!");
 });
 
 client.on('message', message => {
