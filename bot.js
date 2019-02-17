@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const guildID = "546385232698408970";
-var memberCount = client.guilds.get(guildID).members.size()
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -21,7 +19,7 @@ client.on('message', message => {
     }
 });
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **' + memberCount + '** membros no servidor!'); 
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **?** membros no servidor!'); 
 });
 
 client.on('guildMemberRemove', member => {
