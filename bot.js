@@ -5,6 +5,13 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+public void onMessageReceived(MessageReceivedEvent event){
+    if(event.getMessage().getContentRaw().startsWith("!say")){
+        event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(6)).queue();
+        event.getMessage().delete().queue();
+    }
+}
+
 client.on('message', message => {
   if (message.channel.id === "546679416068243456") {
       message.react('546686138316750859')
