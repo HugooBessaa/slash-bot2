@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const command = args.shift().toLowerCase();
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -13,11 +12,6 @@ client.on('message', message => {
               message.react('546686205224419348')
           });
   }
-    if(command === "+slaaa"){
-  let text = args.join(" ");
-  message.delete();
-  message.channel.send(text);
-}
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
         message.channel.send({embed: {
