@@ -18,11 +18,11 @@ client.on('message', message => {
     }
 });
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:inbox_tray: **' + member.user.username + '**, entrou no servidor!\nAtualmente somos **?** membros no servidor!'); 
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **'+ member.user.username +'**, entrou no servidor!\n:slashontop: Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as #regras para não ser punido!'); 
 });
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart:\n\n:outbox_tray: **' + member.user.username + '**, saiu do servidor!\nAtualmente somos **?** membros no servidor!');
+    member.guild.channels.get('546432785666015348').send(':green_heart: Servidores SlashMC :green_heart: \n\n:outbox_tray: **'+ member.user.username +'**, saiu no servidor!\n:slashontop: Infelizmente perdemos um membro!\nAconselhamos a ler as #regras para não ser punido!');
 });
 
 // THIS  MUST  BE  THIS  WAY
