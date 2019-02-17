@@ -24,8 +24,6 @@ client.on('message', async (message) => {
 	    .then(function (message) {
           message.react('546684879153397779')
           message.react('546684910446968843')
-       		message.pin()
-          message.delete()
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
