@@ -17,8 +17,8 @@ client.on('message', async (message) => {
     if(command === "say") {
 		message.delete()
         const embed = new Discord.RichEmbed()
-		.setColor(0x954D23)
-		.setDescription(message.author.username + " says: " + args.join(" "));
+		.setColor(0x4bf442)
+		.setDescription("Mensagem de "+ message.author.username + ": " + args.join(" "));
 		message.channel.send({embed})
 	}
     
