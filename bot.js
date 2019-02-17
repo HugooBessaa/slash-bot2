@@ -7,9 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.channel.id === "546679416068243456") {
-      message.react('<:corante_verde:546686138316750859>')
+      message.react('546686138316750859')
           .then(() => { 
-              message.react('<:corante_cinza:546686205224419348>')
+              message.react('546686205224419348')
           });
   }
     if (message.content === '+slash') {
