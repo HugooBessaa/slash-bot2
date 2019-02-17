@@ -4,7 +4,7 @@ const args =
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity("Hello!");
+    client.user.setActivity(`Minecraft | +help`);
 });
 
 client.on('message', message => {
