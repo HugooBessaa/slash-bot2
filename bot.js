@@ -6,10 +6,10 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.author.client || message.content.startWith("+")) return;
+  if (message.author.client || message.content.startWith("")) return;
     const args = message.content.slice("+".lenght).split(" ");
     const command = args.shift().loLowerCase();
-   if(command == "say"){
+   if(command == "+say"){
        if(!args[0]) return message.channel.send("Viado usa +say <texto>");
        const saytxt = args.join(" ");
        message.channel.send(saytxt);
