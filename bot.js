@@ -7,9 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.channel.id === "546679416068243456") {
-      message.react(client.emojis.get('546686138316750859'));
+      message.react('546686138316750859')
           .then(() => { 
-              message.react(client.emojis.get('546686205224419348'));
+              message.react('546686205224419348')
           });
   }
     if (message.content === '+slash') {
