@@ -21,6 +21,12 @@ client.on('message', async (message) => {
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
 		client.channels.get('546686267874869260').send({embed})
+	    .then(function (message) {
+          message.react('546686138316750859')
+          message.react('546686205224419348')
+       		message.pin()
+          message.delete()
+    			});
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
     
