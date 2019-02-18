@@ -26,12 +26,12 @@ client.on('message', async (message) => {
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
-	
+
     if(command === "avisosla") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
-		.setDescription(":loudspeaker::warning: Aviso de **' + message.author.username + '**:warning::loudspeaker:\n```' + args.join(" ") + '```");
+		.setDescription(":loudspeaker::warning: Aviso de **" + message.author.username + "**:warning::loudspeaker:\n```" + args.join(" ") + "```");
 		client.channels.get('546052170785751051').send({embed})
 	    .then(function (message) {
           message.react('546076487384825856')
