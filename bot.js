@@ -27,7 +27,7 @@ client.on('message', async (message) => {
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
 	
-    if(command === "aviso") {
+    if(command === "avisosla") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
