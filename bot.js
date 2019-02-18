@@ -16,7 +16,6 @@ client.on('message', async (message) => {
     
     if(command === "sugestão") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+sugestão <sua sugestão>**");
-		message.delete()
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
@@ -27,12 +26,22 @@ client.on('message', async (message) => {
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
+	
+    if(command === "aviso") {
+	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
+        const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+		.setDescription(":loudspeaker::warning: Aviso de **' + message.author.username + '**:warning::loudspeaker:\n```' + args.join(" ") + '```");
+		client.channels.get('546052170785751051').send({embed})
+	    .then(function (message) {
+          message.react('546684879153397779')
+          message.react('546684910446968843')
+    			});
+	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
+	}
     
   if (message.channel.id === "546686267874869260") {
-      message.react('546686138316750859')
-          .then(() => { 
-              message.react('546686205224419348')
-          });
+      message.react('546076487384825856')
   }
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
