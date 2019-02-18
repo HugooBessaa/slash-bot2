@@ -27,18 +27,6 @@ client.on('message', async (message) => {
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
 	
-    if(command === "aviso") {
-	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
-        const embed = new Discord.RichEmbed()
-		.setColor(0xce1e00)
-		.setDescription(":loudspeaker::warning: Aviso de **' + message.author.username + '**:warning::loudspeaker:\n```' + args.join(" ") + '```");
-		client.channels.get('546052170785751051').send({embed})
-	    .then(function (message) {
-          message.react('546076487384825856')
-    			});
-	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
-	}
-	
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
         message.channel.send({embed: {
