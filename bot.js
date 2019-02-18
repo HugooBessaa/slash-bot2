@@ -34,15 +34,11 @@ client.on('message', async (message) => {
 		.setDescription(":loudspeaker::warning: Aviso de **' + message.author.username + '**:warning::loudspeaker:\n```' + args.join(" ") + '```");
 		client.channels.get('546052170785751051').send({embed})
 	    .then(function (message) {
-          message.react('546684879153397779')
-          message.react('546684910446968843')
+          message.react('546076487384825856')
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
 	}
-    
-  if (message.channel.id === "546686267874869260") {
-      message.react('546076487384825856')
-  }
+	
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
         message.channel.send({embed: {
@@ -50,9 +46,6 @@ client.on('message', async (message) => {
   description: "**Site:** https://redeslash.com\n**Twitter:** @SlashNetworkOFC\n**Criador:** <@414387339629035520>"
 }});
   	}
-    if (message.content === 'O que fazer com um dominio?') {
-    	message.channel.send('Faça igual ao Azalim, pegue nele e enfie no cu! 😆😆');
-    }
 });
 client.on('guildMemberAdd', member => {
     member.guild.channels.get('546048881033609216').send(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **'+ member.user.username +'**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!'); 
