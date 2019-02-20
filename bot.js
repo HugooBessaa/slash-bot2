@@ -5,6 +5,7 @@ const prefix = "+"
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity('jogar.redeslash.com');
 });
 
 client.on('message', async (message) => {
