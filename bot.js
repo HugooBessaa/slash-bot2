@@ -14,7 +14,7 @@ client.on('message', async (message) => {
 	command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
     
-    if (message.channel.id === '546507225498386443') {
+    if (command.channel.id === '546507225498386443') {
     if(command === "sugestão") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+sugestão <sua sugestão>**");
         const embed = new Discord.RichEmbed()
