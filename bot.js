@@ -14,6 +14,7 @@ client.on('message', async (message) => {
 	command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
     
+    if (message.channel.id === '546507225498386443') {
     if(command === "sugestão") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+sugestão <sua sugestão>**");
         const embed = new Discord.RichEmbed()
@@ -38,6 +39,9 @@ client.on('message', async (message) => {
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
 	}
+    }else{
+	  message.channel.send(":green_heart: **" + message.author.username + "** só e possivel enviar comandos em canais proprios para tais, como exemplo o <#546507225498386443>!")
+    }
 	
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
