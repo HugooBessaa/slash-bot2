@@ -5,7 +5,7 @@ const prefix = "+"
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity("Minecraft", {type: "PLAYING"});
+    client.user.setActivity("jogar.redeslash.com", {type: "PLAYING"});
 });
 
 client.on('message', async (message) => {
