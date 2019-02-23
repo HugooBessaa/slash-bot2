@@ -42,7 +42,7 @@ client.on('message', async (message) => {
 	
     if(command === "pingar") {
        const m = await message.channel.send("Ping?");
-        m.edit(":green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:**` ${m.createdTimestamp - message.createdTimestamp}ms`\n:zap: **| API Ping:**` ${Math.round(client.ping)}ms`");
+        m.edit(":green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:** ${m.createdTimestamp - message.createdTimestamp}ms\n:zap: **| API Ping:** ${Math.round(client.ping)}ms");
         }
 	
     if (message.content === '+slash') {
