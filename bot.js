@@ -5,6 +5,7 @@ const prefix = "+"
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity("Hello!", {type: "PLAYING"});
 });
 
 client.on('message', async (message) => {
