@@ -72,7 +72,7 @@ client.on('message', async (message) => {
         }
 	
     if(command === "kickar"){
-if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Staff"].includes(r.name)) )
       return message.reply("Desculpe, mas você não tem permissão para utilizar esse comando!");
     
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
