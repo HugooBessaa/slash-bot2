@@ -46,8 +46,8 @@ client.on('message', async (message) => {
 	        .setTitle(":green_heart: Servidores SlashMC :green_heart:")
 		.setDescription('\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
 	    	embed.setThumbnail(message.author.avatarURL)
-	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)")
-	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)")
+	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)", true)
+	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
 	        
            message.channel.send({embed});
 	}
