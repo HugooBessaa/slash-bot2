@@ -88,7 +88,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
       .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
-		.setDescription(`:green_heart: Servidores SlashMC :green_heart:\n\n:no_entry_sign: **`${member.user.tag}`** foi kickado do servidor por **`${message.author.tag}`**!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`);
+		.setDescription(`:green_heart: Servidores SlashMC :green_heart:\n\n:no_entry_sign: **${member.user.tag}** foi kickado do servidor por **${message.author.tag}**!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`);
 	    	embed.setThumbnail(member.user.avatarURL)
            message.channel.send({embed});
   }
