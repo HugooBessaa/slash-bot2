@@ -52,6 +52,18 @@ client.on('message', async (message) => {
            message.channel.send({embed});
 	}
 	
+    if(command === "testarsaida") {
+        const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+	        .setTitle(":green_heart: Servidores SlashMC :green_heart:")
+		.setDescription('\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Infelizmente perdemos um membro!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
+	    	embed.setThumbnail(message.author.avatarURL)
+	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)", true)
+	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
+	        
+           message.channel.send({embed});
+	}
+	
     if(command === "pingar") {
        const m = await message.channel.send("Ping?");
        var websocket = "" + m.createdTimestamp - message.createdTimestamp + "ms";
@@ -71,7 +83,6 @@ client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **'+ member.user.username +'**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
-		client.channels.get('546686267874869260').send({embed})
     member.guild.channels.get('546048881033609216').send({embed}); 
 });
 
