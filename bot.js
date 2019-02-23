@@ -56,7 +56,7 @@ client.on('message', async (message) => {
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
 	        .setTitle(":green_heart: Servidores SlashMC :green_heart:")
-		.setDescription('\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Infelizmente perdemos um membro!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
+		.setDescription('\n:outbox_tray: **HugoBessaPT**, saiu do servidor!\n<:slashontop:546070971501510666> Infelizmente perdemos um membro!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
 	    	embed.setThumbnail(message.author.avatarURL)
 	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)", true)
 	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
