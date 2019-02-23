@@ -82,11 +82,15 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
       return message.reply("Não é possivel kickar esse membro pois ele tem um cargo acima do meu! Ou estou sem permissão para kickar.");
     
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "É necessário digitar um motivo.";
+    if(!reason) reason = "Motivo indefinido.";
     
     await member.kick(reason)
       .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
-    message.reply(`${member.user.tag} foi kickado por ${message.author.tag}\nMotivo: ${reason}`);
+        const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+		.setDescription(`:green_heart: Servidores SlashMC :green_heart:\n\n:no_entry_sign: **`${member.user.tag}`** foi kickado do servidor por **`${message.author.tag}`**!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`);
+	    	embed.setThumbnail(member.user.avatarURL)
+           message.channel.send({embed});
   }
 	
     if (message.content === '+slash') {
