@@ -71,6 +71,24 @@ client.on('message', async (message) => {
         m.edit(`:green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:** ${websocket}\n:zap: **| API Ping:** ${apiping}`);
         }
 	
+    if(command === "kickar"){
+if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+      return message.reply("Desculpe, mas você não tem permissão para utilizar esse comando!");
+    
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!member)
+      return message.reply("Por favor mencione um membro valido presente neste servidor!");
+    if(!member.kickable) 
+      return message.reply("Não é possivel kickar esse membro pois ele tem um cargo acima do meu! Ou estou sem permissão para kickar.");
+    
+    let reason = args.slice(1).join(' ');
+    if(!reason) reason = "É necessário digitar um motivo.";
+    
+    await member.kick(reason)
+      .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
+    message.reply(`${member.user.tag} foi kickado por ${message.author.tag}\nMotivo: ${reason}`);
+  }
+	
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
         message.channel.send({embed: {
