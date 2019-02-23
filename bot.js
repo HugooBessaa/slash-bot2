@@ -40,6 +40,15 @@ client.on('message', async (message) => {
 	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
 	}
 	
+    if(command === "testarentrada") {
+        const embed = new Discord.RichEmbed()
+		.setColor(0x4bf442)
+		.setDescription(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
+	        .addField("Field title", "Your text here: [link](http://example.com)")
+		client.channels.get('546686267874869260').send({embed})
+           message.channel.send({embed});
+	}
+	
     if(command === "pingar") {
        const m = await message.channel.send("Ping?");
        var websocket = "" + m.createdTimestamp - message.createdTimestamp + "ms";
