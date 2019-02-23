@@ -40,6 +40,11 @@ client.on('message', async (message) => {
 	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
 	}
 	
+    if(command === "pingar") {
+       const m = await message.channel.send("Ping?");
+       m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        }
+	
     if (message.content === '+slash') {
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
         message.channel.send({embed: {
