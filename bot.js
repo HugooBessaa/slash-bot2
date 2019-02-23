@@ -44,7 +44,10 @@ client.on('message', async (message) => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(':green_heart: Servidores SlashMC :green_heart: \n\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
-	        embed.addField("Field title", "Your text here: [link](http://example.com)")
+	        embed.addField(":video_game: IP:", "jogar.redeslash.com")
+	        embed.addField(":shopping_cart: Loja:", "Clique aqui [link](https://redeslash.com)")
+	        embed.addField(":bird: Twitter:", "@SlashNetworkOFC [link](https://twitter.com/slashnetworkof)")
+	        
 		client.channels.get('546686267874869260').send({embed})
            message.channel.send({embed});
 	}
