@@ -6,6 +6,7 @@ const prefix = "+"
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setActivity("jogar.redeslash.com", {type: "PLAYING"});
+    
 });
 
 client.on('message', async (message) => {
@@ -64,7 +65,7 @@ client.on('message', async (message) => {
            message.channel.send({embed});
 	}
 	
-    if(command === "pingar") {
+    if(command === "ping") {
        const m = await message.channel.send("Ping?");
        var websocket = "" + m.createdTimestamp - message.createdTimestamp + "ms";
        var apiping = "" + Math.round(client.ping) + "ms";
@@ -72,7 +73,20 @@ client.on('message', async (message) => {
         }
      if(command === "testednv") {
 	message.guild.channels.get('549169189965791232').setName("🎮 Jogando: 1");
+	message.channel.send("prontoooo");
      }
+	
+ if(command === "clear") {
+    const deleteCount = parseInt(args[0], 10);
+    
+    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+      return message.reply("Escolha a quantidade de mensagens que deseja deletar de 2 a 100\nUtilize: +clear (2 > 100)");
+
+    const fetched = await message.channel.fetchMessages({limit: deleteCount});
+    message.channel.bulkDelete(fetched)
+    message.channel.send(':green_heart: O chat foi limpo por **'+ member.user.username +'**!')
+      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+  }
 	
     if(command === "kickar"){
 if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Staff"].includes(r.name)) )
