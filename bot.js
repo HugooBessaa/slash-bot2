@@ -56,7 +56,7 @@ client.on('message', async (message) => {
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.channel.send(":green_heart: <"+ message.author.id +">, Uso correto: **+clear <quantidade>**\n:warning: Lembrando que só é possivel limpar de `2 até 100` mensagens");
+      return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: **+clear <quantidade>**\n:warning: Lembrando que só é possivel limpar de `2 até 100` mensagens");
 
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
