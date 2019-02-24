@@ -103,7 +103,6 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .setFooter('Não se esqueça de ler as regras!', message.author.displayAvatarURL())
                 .setTimestamp();
 	   message.channel.send({embed});
-}});
       });
 	}
 });
