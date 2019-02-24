@@ -29,7 +29,7 @@ client.on('message', async (message) => {
 	        message.channel.send(":green_heart: **" + message.author.username + "**, a sua sugestão foi enviada com sucesso!\n:inbox_tray: Verifique o canal #sugestoes.")
 	}
 
-    if(command === "avisosla") {
+    if(command === "aviso") {
 	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
@@ -39,30 +39,6 @@ client.on('message', async (message) => {
           message.react('546076487384825856')
     			});
 	        message.channel.send(":green_heart: **" + message.author.username + "** o seu aviso foi enviado com sucesso!")
-	}
-	
-    if(command === "testarentrada") {
-        const embed = new Discord.RichEmbed()
-		.setColor(0x4bf442)
-	        .setTitle(":green_heart: Servidores SlashMC :green_heart:")
-		.setDescription('\n:inbox_tray: **HugoBessaPT**, entrou no servidor!\n<:slashontop:546070971501510666> Seja bem vindo ao discord oficial da SlashMC!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
-	    	embed.setThumbnail(message.author.avatarURL)
-	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)", true)
-	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
-	        
-           message.channel.send({embed});
-	}
-	
-    if(command === "testarsaida") {
-        const embed = new Discord.RichEmbed()
-		.setColor(0xce1e00)
-	        .setTitle(":green_heart: Servidores SlashMC :green_heart:")
-		.setDescription('\n:outbox_tray: **HugoBessaPT**, saiu do servidor!\n<:slashontop:546070971501510666> Infelizmente perdemos um membro!\nAconselhamos a ler as <#546049920365232148> para não ser punido!');
-	    	embed.setThumbnail(message.author.avatarURL)
-	        embed.addField(":shopping_cart: Loja:", "[Clique aqui](https://redeslash.com)", true)
-	        embed.addField(":bird: Twitter:", "[@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
-	        
-           message.channel.send({embed});
 	}
 	
     if(command === "ping") {
@@ -80,11 +56,11 @@ client.on('message', async (message) => {
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Escolha a quantidade de mensagens que deseja deletar de 2 a 100\nUtilize: +clear (2 > 100)");
+      return message.reply(":green_heart: Uso correto: **+clear <quantidade>**\n:warning: Lembrando que só é possivel limpar de `2 até 100` mensagens");
 
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+      .catch(error => message.reply(`:warning:Erro: ${error}`));
 	 message.channel.send(':green_heart: O chat foi limpo por **'+ message.author.username +'**!')
   }
 	
