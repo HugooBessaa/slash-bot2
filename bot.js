@@ -93,10 +93,16 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
        var request = require('request');
 	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
   	var status = JSON.parse(body);
-    	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5\n**Jogadores:** ' + status['players']['online'] + '/' + status['players']['max'] + '');
-        message.channel.send({embed: {
-  color: 0x4bf442,
-  description: "**Site:** https://redeslash.com\n**Twitter:** @SlashNetworkOFC\n**Criador:** <@414387339629035520>"
+    	const embed = new Discord.RichEmbed()
+	        .setAuthor('Status da SlashMC', message.author.displayAvatarURL())
+	        .addField(':scroll: Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
+	        .addField(':scroll: Qual é o twitter ddo servidor?', ":shopping_cart: Twitter: [@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
+	        .addField(':scroll: Qual é o IP do servidor?', ":video_game: IP: jogar.redeslash.com\n:video_game: Porta: 19132", false)
+	        .setThumbnail(message.author.displayAvatarURL())
+		.setColor(0xce1e00)
+	        .setFooter('Não se esqueça de ler as regras!', message.author.displayAvatarURL())
+                .setTimestamp();
+	   message.channel.send({embed});
 }});
       });
 	}
