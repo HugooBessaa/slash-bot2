@@ -93,7 +93,6 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
        var request = require('request');
 	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
   	var status = JSON.parse(body);
-	    message.channel.send(":green_heart: Carregando informações...");
     	const embed = new Discord.RichEmbed()
 	        .setAuthor('Status da SlashMC', client.user.avatarURL)
 	        .addField('<a:minecraft_jump:549209842548604978> Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
