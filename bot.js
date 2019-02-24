@@ -52,7 +52,7 @@ client.on('message', async (message) => {
         }
      if(command === "testednv") {
 	message.guild.channels.get('549169189965791232').setName("🎮 Jogando: 1");
-	message.channel.send("prontoooo");
+	message.channel.send("prontoooo mano fode-te kk");
      }
 	
  if(command === "clear") {
