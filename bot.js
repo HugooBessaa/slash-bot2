@@ -98,7 +98,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .addField(':scroll: Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
 	        .addField(':scroll: Qual é o twitter ddo servidor?', ":shopping_cart: Twitter: [@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
 	        .addField(':scroll: Qual é o IP do servidor?', ":video_game: IP: jogar.redeslash.com\n:video_game: Porta: 19132", false)
-	        .setThumbnail(message.author.displayAvatarURL())
+	        .setThumbnail(client.user.avatarURL)
 		.setColor(0xce1e00)
 	        .setFooter('Não se esqueça de ler as regras!', client.user.avatarURL)
                 .setTimestamp();
