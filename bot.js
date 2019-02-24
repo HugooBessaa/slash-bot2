@@ -102,7 +102,8 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
   color: 0x4bf442,
   description: "**Site:** https://redeslash.com\n**Twitter:** @SlashNetworkOFC\n**Criador:** <@414387339629035520>"
 }});
-	}}
+      });
+	}
 });
 client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
