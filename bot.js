@@ -95,9 +95,9 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
   	var status = JSON.parse(body);
     	const embed = new Discord.RichEmbed()
 	        .setAuthor('Status da SlashMC', client.user.avatarURL)
-	        .addField('<:question_what:549208984285085721> Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
-	        .addField('<:question_what:549208984285085721> Qual é o twitter do servidor?', ":bird: Twitter: [@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
-	        .addField('<:question_what:549208984285085721> Qual é o IP do servidor?', ":video_game: IP: jogar.redeslash.com\n:video_game: Porta: 19132", false)
+	        .addField('<a:minecraft_jump:549209842548604978> Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
+	        .addField('<a:minecraft_jump:549209842548604978> Qual é o twitter do servidor?', ":bird: Twitter: [@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
+	        .addField('<a:minecraft_jump:549209842548604978> Qual é o IP do servidor?', ":video_game: IP: jogar.redeslash.com\n:video_game: Porta: 19132", false)
 	        .setThumbnail(client.user.avatarURL)
 		.setColor(0xce1e00)
 	        .setFooter('Não se esqueça de ler as regras!', client.user.avatarURL)
