@@ -94,7 +94,11 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
   }
 	
     if (message.content === '+slash') {
-    	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5');
+       var request = require('request');
+	request('https://api.mcsrvstat.us/1/rankup.redeslash.com:19132', function (error, response, body){
+  	var status = JSON.parse(body);
+  	msg.reply('confira as informações!\n\n:large_blue_diamond: Servidor RankUP :large_blue_diamond:\n:keyboard: IP: ru.redewhinter.com\n:unlock: Porta: 25601\n:iphone: Versão: 1.1.X\n:busts_in_silhouette: Jogadores: ' + status['players']['online'] + '/' + status['players']['max'] + '\n\n\n\n :earth_americas: Site: https://redewhinter.com\n :bird: Twitter: @WhinterNetwork');
+    	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5\n**Jogadores:** ' + status['players']['online'] + '/' + status['players']['max']);
         message.channel.send({embed: {
   color: 0x4bf442,
   description: "**Site:** https://redeslash.com\n**Twitter:** @SlashNetworkOFC\n**Criador:** <@414387339629035520>"
