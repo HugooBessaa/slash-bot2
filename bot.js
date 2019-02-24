@@ -89,7 +89,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
            message.channels.get('546049103382052866').send({embed});
   }
 	
-    if (message.content === '+slash') {
+    if (command === 'slash') {
        var request = require('request');
 	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
   	var status = JSON.parse(body);
