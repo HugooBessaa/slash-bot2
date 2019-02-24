@@ -85,7 +85,7 @@ client.on('message', async (message) => {
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
-	 message.channel.send(':green_heart: O chat foi limpo por **${message.user.username}**!')
+	 message.channel.send(':green_heart: O chat foi limpo por **'+ message.author.username +'**!')
   }
 	
     if(command === "kickar"){
