@@ -17,7 +17,7 @@ client.on('message', async (message) => {
 	let args = message.content.split(" ").slice(1);
     
     if(command === "sugestão") {
-	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+sugestão <sua sugestão>**");
+	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +sugestão <sua sugestão>\n:warning: Lembrando que o mau uso do comando resultará em punimento");
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
@@ -30,7 +30,7 @@ client.on('message', async (message) => {
 	}
 
     if(command === "aviso") {
-	    if(!args[0]) return message.channel.send(":green_heart: Uso correto: **+aviso <seu aviso>**");
+	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +aviso <seu aviso>\n:warning: Lembrando que o mau uso do comando resultará em demote");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
 		.setDescription(":loudspeaker::warning: Aviso de **" + message.author.username + "**:warning::loudspeaker:\n```" + args.join(" ") + "```\n:warning: É aconselhado a lerem @everyone!");
