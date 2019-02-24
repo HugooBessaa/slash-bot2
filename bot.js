@@ -95,14 +95,14 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	
     if (message.content === '+slash') {
        var request = require('request');
-	request('https://api.mcsrvstat.us/1/rankup.redeslash.com:19132', function (error, response, body){
+	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
   	var status = JSON.parse(body);
     	message.reply('alô me chamou? ixi verdade..\n:green_heart: Servidores SlashMC :green_heart:\n:shinto_shrine: Factions Mystic MCPE:\n**IP:** jogar.redeslash.com\n**Porta:** 19132\n**Versão:** 1.1.5\n**Jogadores:** ' + status['players']['online'] + '/' + status['players']['max'] + '');
         message.channel.send({embed: {
   color: 0x4bf442,
   description: "**Site:** https://redeslash.com\n**Twitter:** @SlashNetworkOFC\n**Criador:** <@414387339629035520>"
 }});
-  	}
+	}}
 });
 client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
