@@ -16,7 +16,7 @@ client.on('message', async (message) => {
 	command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
 	
-    if(command === "setup-captcha) {
+    if(command === "setup-captcha") {
        message.channel.send(":green_heart: **Servidores SlashMC** :green_heart:\n\n:warning: | Este é o nosso sistema de verificação dos usúarios. O que ele faz? Ele verifica se você é um `BOT (robô)`\n\n:loudspeaker: | Caso não seja um `robô` por favor clique na reação e você irá poder interagir com todos os canais do nosso servidor, caso contrário permanecerá imune aos canais do servidor.\n\n:no_entry_sign: Lembrando que enquanto você  não confirmar o captcha, você não conseguirá interagir em nenhum canal. :no_entry_sign:")
        }
     if(command === "sugestão") {
