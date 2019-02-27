@@ -107,7 +107,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	}
 });
 
-client.on("messageReactionAdd", function(users){
+client.on("messageReactionAdd", function(users)){
  if (users.message.channel === users.message.guild.channels.find('name', '🔏│captcha') && users.message.id === '549191117891960835' && users.emoji.name === '👌'){
 	users.addRole(users.guild.roles.find("id", '546066964569784320'));
         users.removeRole(users.guild.roles.find("id", '548943092481392641'));
