@@ -106,6 +106,13 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
       });
 	}
 });
+
+client.on("messageReactionAdd", function(reaction, users){
+ if (reaction.message.channel === reaction.message.guild.channels.find('name', '🔏│captcha') && reaction.message.id === '549191117891960835' && reaction.emoji.name === '👌'){
+	users.addRole(users.guild.roles.find("id", '546066964569784320'));
+        users.removeRole(users.guild.roles.find("id", '548943092481392641'));
+ }
+}
 client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
