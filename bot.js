@@ -122,7 +122,6 @@ client.on("raw", event=> {
 		           var user = client.users.get(event.d.user_id);
 				 client.emit('messageReactionAdd', msgReaction, user);
 	              });
-			 .catch(err => console.log(err));
 	        }
 	   }
      }
