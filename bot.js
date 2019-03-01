@@ -115,7 +115,7 @@ client.on("raw", event=> {
 		   if(reactionChannel.messages.has(event.d.message_id))
 			   return;
 		   else{
-			 reactionChannel.fetchMessage(event.d.message_id)
+			 reactionChannel.fetchMessage(event.d.message_id);
 			 .then(msg => {
 		           var msgReaction = msg.reactions.get(event.d.emoji.name + ":" + event.emoji.id);
 		           var user = client.users.get(event.d.user_id);
