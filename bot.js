@@ -109,13 +109,28 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 
 client.on("raw", event=> {
 	console.log(event);
+	const eventName = event.t;
+     if(eventName === 'MESSAGE_REACTION_ADD'){
+	   if(event.d.message_id === '550825144298373140'){
+		 var reactionChannel = client.channels.get(event.d.channel_id);
+		   if(reactionChannel.message.has(event.d.message_id))
+			   return;
+		   else{
+			 reactionChannel.fetchMessage(event.d.message_id)
+			 .then(msg => {
+		           var msgReaction = msg.reactions.get(event.d.emoji.name + ":" + event.emoji.id);
+		           var user = client.users.get(event.d.user_id);
+				 client.emit('messageReactionAdd', msgReaction, user);
+	              });
+			 .catch(err => console.log(err));
+	        }
+	   }
+     }
 });
 	  
-client.on("messageReactionAdd", (reaction, users) =>{
- if (reaction.message.channel === reaction.message.guild.channels.find('name', '🔏│captcha') && reaction.message.id === '549191117891960835' && reaction.emoji.id === '546684879153397779'){
-	users.addRole(users.guild.roles.find("id", '546066964569784320'));
-        users.removeRole(users.guild.roles.find("id", '548943092481392641'));
- }
+client.on("messageReactionAdd", (messageReaction, users) =>{
+      var roleName = messageReaction.emoji.name;
+      console.log(roleName);
 });
 client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
