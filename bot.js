@@ -108,7 +108,6 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 });
 
 client.on("raw", event=> {
-	console.log(event);
 	const eventName = event.t;
      if(eventName === 'MESSAGE_REACTION_ADD'){
 	   if(event.d.message_id === '550825144298373140'){
@@ -127,9 +126,16 @@ client.on("raw", event=> {
      }
 });
 	  
-client.on("messageReactionAdd", (messageReaction, users) =>{
+client.on("messageReactionAdd", (messageReaction, user) =>{
       var roleName = messageReaction.emoji.name;
       console.log(roleName);
+	var role = messageReaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+	if(role){
+		var member = messageReaction.message.guild.members.find(member => member.id === user.id);
+	if(member){
+		member.addRole(role.id);
+	}
+	}
 });
 client.on('guildMemberAdd', member => {
         const embed = new Discord.RichEmbed()
