@@ -159,5 +159,4 @@ client.on('guildMemberRemove', member => {
 	   member.guild.channels.get('546048881033609216').send({embed});
 });
 
-// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
