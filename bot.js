@@ -134,7 +134,8 @@ client.on("messageReactionAdd", (messageReaction, user) =>{
 	if(role){
 		var member = messageReaction.message.guild.members.find(member => member.id === user.id);
 	if(member){
-		member.addRole(role.id);
+		member.addRole('546066964569784320');
+		member.removeRole('548943092481392641');
 	}
 	}
 });
