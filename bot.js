@@ -107,7 +107,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	}
 });
 
-client.on("raw", event=> {
+client.on("raw", event => {
 	const eventName = event.t;
      if(eventName === 'MESSAGE_REACTION_ADD'){
 	   if(event.d.message_id === '550825144298373140'){
@@ -115,12 +115,13 @@ client.on("raw", event=> {
 		   if(reactionChannel.messages.has(event.d.message_id))
 			   return;
 		   else{
-			 reactionChannel.fetchMessage(event.d.message_id);
+			 reactionChannel.fetchMessage(event.d.message_id)
 			 .then(msg => {
 		           var msgReaction = msg.reactions.get(event.d.emoji.name + ":" + event.emoji.id);
 		           var user = client.users.get(event.d.user_id);
 				 client.emit('messageReactionAdd', msgReaction, user);
-	              });
+	              })
+			   .catch(err => console.log(err));
 	        }
 	   }
      }
