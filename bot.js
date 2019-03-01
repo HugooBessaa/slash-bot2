@@ -113,7 +113,7 @@ client.on("raw", event=> {
      if(eventName === 'MESSAGE_REACTION_ADD'){
 	   if(event.d.message_id === '550825144298373140'){
 		 var reactionChannel = client.channels.get(event.d.channel_id);
-		   if(reactionChannel.message.has(event.d.message_id))
+		   if(reactionChannel.messages.has(event.d.message_id))
 			   return;
 		   else{
 			 reactionChannel.fetchMessage(event.d.message_id)
