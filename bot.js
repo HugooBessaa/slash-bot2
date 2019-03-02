@@ -37,7 +37,7 @@ client.on('message', async (message) => {
 
     if(command === "aviso") {
 if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name)) )
-      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
 	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +aviso <seu aviso>\n:warning: Lembrando que o mau uso do comando resultará em demote");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
@@ -62,7 +62,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	
  if(command === "clear") {
 if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name)) )
-      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
@@ -76,7 +76,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	
     if(command === "kickar"){
 if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Ajudante"].includes(r.name)) )
-      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
     
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
