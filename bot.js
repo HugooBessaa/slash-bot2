@@ -100,7 +100,32 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .setAuthor('Punimentos SlashMC | Kick ', client.user.avatarURL)
 		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
-	        .setFooter(`Autor do banimento: ${message.author.tag}`, message.author.displayAvatarURL)
+	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
+	        .setTimestamp();
+           client.channels.get('546049103382052866').send({embed})
+  }
+	
+    if(command === "banir"){
+if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.name)) )
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
+    
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!member)
+      return message.reply("Por favor mencione um membro valido presente neste servidor!");
+    if(!member.bannable) 
+      return message.reply("Não é possivel banir esse membro pois ele tem um cargo acima do meu! Ou estou sem permissão para banir.");
+    
+    let reason = args.slice(1).join(' ');
+    if(!reason) reason = "Motivo indefinido.";
+    
+    await member.ban(reason)
+      .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
+        const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+	        .setAuthor('Punimentos SlashMC | Ban ', client.user.avatarURL)
+		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi banido do servidor!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
+	        .setThumbnail(member.user.displayAvatarURL)
+	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
            client.channels.get('546049103382052866').send({embed})
   }
