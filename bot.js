@@ -36,6 +36,8 @@ client.on('message', async (message) => {
 	}
 
     if(command === "aviso") {
+if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name)) )
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
 	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +aviso <seu aviso>\n:warning: Lembrando que o mau uso do comando resultará em demote");
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
@@ -48,7 +50,7 @@ client.on('message', async (message) => {
 	}
 	
     if(command === "ping") {
-       const m = await message.channel.send("Ping?");
+       const m = await message.channel.send(":warning: Pegando os dados, aguarde...");
        var websocket = "" + m.createdTimestamp - message.createdTimestamp + "ms";
        var apiping = "" + Math.round(client.ping) + "ms";
         m.edit(`:green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:** ${websocket}\n:zap: **| API Ping:** ${apiping}`);
@@ -59,6 +61,8 @@ client.on('message', async (message) => {
      }
 	
  if(command === "clear") {
+if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name)) )
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
@@ -71,8 +75,8 @@ client.on('message', async (message) => {
   }
 	
     if(command === "kickar"){
-if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Staff"].includes(r.name)) )
-      return message.reply("Desculpe, mas você não tem permissão para utilizar esse comando!");
+if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Ajudante"].includes(r.name)) )
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>Você não tem permissão para executar esse comando.`);
     
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
