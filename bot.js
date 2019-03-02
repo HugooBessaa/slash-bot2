@@ -63,6 +63,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
 	        .setTimestamp();
 		message.channel.send({embed})
+	        message.author.send("AI PAI PARAAAAAAAAAAAAAA")
      }
 	
  if(command === "clear") {
