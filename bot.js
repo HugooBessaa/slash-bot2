@@ -23,7 +23,8 @@ client.on('message', async (message) => {
 	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +sugestão <sua sugestão>\n:warning: Lembrando que o mau uso do comando resultará em punimento");
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
-		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```\n\nVocês apoiam a opinião de **" + message.author.username + "**?");
+		.setDescription(":green_heart: :bulb: Sugestão de **" + message.author.username + "** :bulb: :green_heart:\n```" + args.join(" ") + "```")
+	.setFooter('Vocês apoiam a opinião de **' + message.author.username + '**?', message.author.avatarURL);
 		client.channels.get('546686267874869260').send({embed})
 	    .then(function (message) {
           message.react('546684879153397779')
