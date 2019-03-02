@@ -56,8 +56,13 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
         m.edit(`:green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:** ${websocket}\n:zap: **| API Ping:** ${apiping}`);
         }
      if(command === "formulario") {
-	message.guild.channels.get('549169189965791232').setName("🎮 Jogando: 1");
-	message.channel.send(":green_heart: <@"+ message.author.id +">, enviei mensagem no seu privado\n:warning: Lembrando que uma `falso-formulario` resultará em punimento.");
+	 const embed = new Discord.RichEmbed()
+		.setColor(0xfcdd11)
+		.setAuthor('Formulário da SlashMC', client.user.avatarURL)
+	        .addField('<a:minecraft_jump:549209842548604978>Enviei uma mensagem no seu privado', 'Você respondendo ao privado do nosso bot, está ciente que um `falso-formulário` resultará em punimento como consta as nossas regras.', false)
+	        .setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+	        .setTimestamp();
+		client.channel.send({embed})
      }
 	
  if(command === "clear") {
