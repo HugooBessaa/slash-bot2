@@ -97,8 +97,8 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
       .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
-	        .setAuthor('Punimentos SlashMC | Kick ', client.user.avatarURL)
-		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
+	        .setAuthor('Punimentos SlashMC | KICK ', client.user.avatarURL)
+		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:no_entry_sign: ID do usuario: `${member.user.id}`\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
 	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
@@ -122,15 +122,32 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
       .catch(error => message.reply(`Desculpe ${message.author} não foi possivel kickar pelo seguinte erro: ${error}`));
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
-	        .setAuthor('Punimentos SlashMC | Ban ', client.user.avatarURL)
-		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi banido do servidor!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
+	        .setAuthor('Punimentos SlashMC | BAN ', client.user.avatarURL)
+		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi banido do servidor!\n:no_entry_sign: ID do usuario: `${member.user.id}`\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
 	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
            client.channels.get('546049103382052866').send({embed})
   }
+
+    if(command === 'desbanir'){
+  if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.name)) )
+      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
+	    let bannedMember = await client.fetchUser(args[0])
+	    if(!bannedMember) return message.channel.send("Digite o ID do usuario que deseja desbanir")
+	  message.guild.unban(bannedMember);
+        const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+	        .setAuthor('Punimentos SlashMC | UNBAN ', client.user.avatarURL)
+		.setDescription(`:no_entry_sign: **<@${bannedMember.id}>** foi desbanido do servidor!\n:Aconselhamos a ler as <#546049920365232148> para não ser punido!`)
+	        .setThumbnail(member.user.displayAvatarURL)
+	        .setFooter(`Autor do desbanimento: ${message.author.tag}`, message.author.displayAvatarURL)
+	        .setTimestamp();
+           client.channels.get('546049103382052866').send({embed})
+	    
+    }
 	
-    if (command === 'slash') {
+    if (command === 'slash'){
        var request = require('request');
 	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
   	var status = JSON.parse(body);
