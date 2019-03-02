@@ -98,7 +98,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
 	        .setAuthor('Punimentos SlashMC | KICK ', client.user.avatarURL)
-		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:no_entry_sign: ID do usuario: `${member.user.id}`\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
+		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:no_entry_sign: ID do usuario: ${member.user.id}\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
 	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
@@ -123,7 +123,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
         const embed = new Discord.RichEmbed()
 		.setColor(0xce1e00)
 	        .setAuthor('Punimentos SlashMC | BAN ', client.user.avatarURL)
-		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi banido do servidor!\n:no_entry_sign: ID do usuario: `${member.user.id}`\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
+		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi banido do servidor!\n:no_entry_sign: ID do usuario: ${member.user.id}\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
 	        .setFooter(`Autor do punimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
