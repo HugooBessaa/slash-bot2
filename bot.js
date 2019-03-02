@@ -90,7 +90,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .setAuthor('Punimentos SlashMC | Kick ', client.user.avatarURL)
 		.setDescription(`:no_entry_sign: **<@${member.user.id}>** foi kickado do servidor!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	        .setThumbnail(member.user.displayAvatarURL)
-	        .setFooter(`Autor do banimento: <@${message.author.id}>`, message.author.displayAvatarURL)
+	        .setFooter(`Autor do banimento: ${message.author.tag}`, message.author.displayAvatarURL)
 	        .setTimestamp();
            client.channels.get('546049103382052866').send({embed})
   }
