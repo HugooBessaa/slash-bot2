@@ -62,7 +62,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	        .addField('<a:minecraft_jump:549209842548604978>Enviei uma mensagem no seu privado', 'Você respondendo ao privado do nosso bot, está ciente que um `falso-formulário` resultará em punimento como consta as nossas regras.', false)
 	        .setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
 	        .setTimestamp();
-		client.channel.send({embed})
+		message.channel.send({embed})
      }
 	
  if(command === "clear") {
