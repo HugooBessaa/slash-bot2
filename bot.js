@@ -24,6 +24,7 @@ client.on('message', async (message) => {
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
 		.setAuthor('Sugestão de ' + message.author.username, message.author.displayAvatarURL)
+	        .addField('A sugestão foi:')
 		.setDescription("```" + args.join(" ") + "```")
 	        .setFooter('Vocês apoiam a opinião de ' + message.author.username + '?', client.user.avatarURL)
 	        .setTimestamp();
