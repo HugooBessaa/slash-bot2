@@ -55,9 +55,9 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
        var apiping = "" + Math.round(client.ping) + "ms";
         m.edit(`:green_heart: **| Ping do Bot da SlashMC**\n:ping_pong: **| Pong!**\n:stopwatch: **| WebSocket Ping:** ${websocket}\n:zap: **| API Ping:** ${apiping}`);
         }
-     if(command === "testednv") {
+     if(command === "formulario") {
 	message.guild.channels.get('549169189965791232').setName("🎮 Jogando: 1");
-	message.channel.send("prontoooo mano fode-te kk");
+	message.channel.send(":green_heart: @HugoBessaPT, Enviei mensagem no seu privado\n:warning: Lembrando que uma `falso-formulario` resultará em punimento como consta as nossas regras");
      }
 	
  if(command === "clear") {
