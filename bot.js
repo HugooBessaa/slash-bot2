@@ -23,7 +23,7 @@ client.on('message', async (message) => {
 	    if(!args[0]) return message.channel.send(":green_heart: <@"+ message.author.id +">, Uso correto: +sugestão <sua sugestão>\n:warning: Lembrando que o mau uso do comando resultará em punimento");
         const embed = new Discord.RichEmbed()
 		.setColor(0x4bf442)
-		.setAuthor('Sugestão de **' + message.author.username + '**:bulb:', client.user.avatarURL)
+		.setAuthor('Sugestão de ' + message.author.username, message.author.displayAvatarURL)
 		.setDescription("```" + args.join(" ") + "```")
 	        .setFooter('Vocês apoiam a opinião de ' + message.author.username + '?', client.user.avatarURL)
 	        .setTimestamp();
