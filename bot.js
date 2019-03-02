@@ -89,7 +89,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 		.setColor(0xce1e00)
 		.setDescription(`:green_heart: Servidores SlashMC :green_heart:\n\n:no_entry_sign: **${member.user.tag}** foi kickado do servidor por **${message.author.tag}**!\n:warning: Motivo: ${reason}\nAconselhamos a ler as <#546049920365232148> para não ser punido!`)
 	    	.setThumbnail(member.user.displayAvatarURL);
-           message.channels.get('546049103382052866').send({embed});
+           client.channels.get('546049103382052866').send({embed})
   }
 	
     if (command === 'slash') {
