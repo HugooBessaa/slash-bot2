@@ -57,7 +57,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
         }
      if(command === "formulario") {
 	message.guild.channels.get('549169189965791232').setName("🎮 Jogando: 1");
-	message.channel.send(":green_heart: @HugoBessaPT, Enviei mensagem no seu privado\n:warning: Lembrando que uma `falso-formulario` resultará em punimento como consta as nossas regras");
+	message.channel.send(":green_heart: <@"+ message.author.id +">, enviei mensagem no seu privado\n:warning: Lembrando que uma `falso-formulario` resultará em punimento.");
      }
 	
  if(command === "clear") {
