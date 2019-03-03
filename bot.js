@@ -165,13 +165,13 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
 	}
     if(command === 'piada'){
 	  var piadas = [
-    "Piada 1",
-    "Piada 2",
-    "Piada 3",
-    "Piada 4",
-    "Piada 5",
-    "Piada 6",
-    "Piada 7"
+    "Qual o médico que é bem desligado?\no OFFtalmologista",
+    "Duas baleias entraram num bar\nComeçaram a discutir e se mataram com pistolas. No outro dia o jornal noticia a calamidade: Baleia baleia baleia",
+    "Por que o Mario foi ao psicólogo?\nPorque estava passando por uma fase difícil",
+    "Oi pai tem pão?\nQue tempão o que filho eu te vi hoje de manhã.",
+    "O que o Exaltasamba faz no Céu?\nEles tocam PaGod",
+    "Eu ia doar sangue hoje mas eles começaram a fazer muitas perguntas...\ndo tipo, De quem é esse sangue? e Como você coletou isso?",
+    "Crianças, esse é o dever de casa de vocês\nMas é de ver ou de fazer?"
 ];
 	  const PIADINHA = new Discord.RichEmbed()
 	      .setAuthor('Piadas sem piada yay :D', client.user.avatarURL)
