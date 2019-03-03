@@ -163,6 +163,25 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
 	   message.channel.send({embed});
       });
 	}
+    if(command === 'piada'){
+	  var piadas = [
+    "Piada 1",
+    "Piada 2",
+    "Piada 3",
+    "Piada 4",
+    "Piada 5",
+    "Piada 6",
+    "Piada 7"
+];
+	  const PIADINHA = new Discord.RichEmbed()
+	      .setAuthor('Piadas sem piada yay :D', client.user.avatarURL)
+	      .addField('Piada:', "piadas[Math.floor(Math.random() * piadas.length)]", true)
+	      .setThumbnail('http://redeslash.com/dogg.jpg')
+              .setColor(0xc90adb)
+	      .setFooter('Se você se riu, você não sabe o que é uma piada decente hahaha!', client.user.avatarURL)
+              .setTimestamp();
+	   message.channel.send({PIADINHA});
+       }
 });
 
 client.on("raw", event => {
