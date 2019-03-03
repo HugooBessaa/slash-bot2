@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const config = require('./configs/piadas.json');
 
 const prefix = "+"
 
@@ -164,18 +165,9 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
       });
 	}
     if(command === 'piada'){
-	  var piadas = [
-    "Qual o médico que é bem desligado?\no OFFtalmologista",
-    "Duas baleias entraram num bar\nComeçaram a discutir e se mataram com pistolas. No outro dia o jornal noticia a calamidade: Baleia baleia baleia",
-    "Por que o Mario foi ao psicólogo?\nPorque estava passando por uma fase difícil",
-    "Oi pai tem pão?\nQue tempão o que filho eu te vi hoje de manhã.",
-    "O que o Exaltasamba faz no Céu?\nEles tocam PaGod",
-    "Eu ia doar sangue hoje mas eles começaram a fazer muitas perguntas...\ndo tipo, De quem é esse sangue? e Como você coletou isso?",
-    "Crianças, esse é o dever de casa de vocês\nMas é de ver ou de fazer?"
-];
 	  var PIADINHA = new Discord.RichEmbed()
 	      .setAuthor('Piadas sem piada yay :D', client.user.avatarURL)
-	      .addField('Piada:', piadas[Math.floor(Math.random() * piadas.length)], true)
+	      .addField('Piada:', config.piadas[Math.floor(Math.random() * config.piadas.length)], true)
 	      .setThumbnail('http://redeslash.com/dogg.jpg')
               .setColor(0xc90adb)
 	      .setFooter('Se você se riu, você não sabe o que é uma piada decente hahaha!', client.user.avatarURL)
