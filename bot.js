@@ -16,7 +16,46 @@ client.on('message', async (message) => {
 	let command = message.content.split(" ")[0];
 	command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
-	
+
+	if(command === "ajuda") {
+		const embed = new Discord.RichEmbed()
+		.setColor(0x4bf442)
+		.addField('<a:minecraft_jump:551799462062718976> Lista de comandos | Página 1 de 3', ':small_orange_diamond:**+sugestão <sua sugestão>** | `Com este comando você poderá divulgar todas as suas ideias para melhorar o servidor de mcpe ou o servidor do discord, e todos membros poderão votar se essa ideia é boa ou não.`\n:small_orange_diamond:**+piada** | `Quando você estiver sem nada para fazer e quiser se divertir um pouco, utilize este comando e faça o nosso bot lhe contar uma piada.`\n:small_orange_diamond:**+formulario** | `Com este comando você poderá fazer o seu formulário para fazer parte da equipe do servidor, respondendo a umas perguntas que o nosso bot irá lhe fazer.`')
+	        .setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+	        .setTimestamp();
+	if(!args[0]) return message.channel.send({embed});
+	if(args[0] === "1"){
+	const embed = new Discord.RichEmbed()
+		.setColor(0x4bf442)
+		.addField('<a:minecraft_jump:551799462062718976> Lista de comandos | Página 1 de 3', ':small_orange_diamond:**+sugestão <sua sugestão>** | `Com este comando você poderá divulgar todas as suas ideias para melhorar o servidor de mcpe ou o servidor do discord, e todos membros poderão votar se essa ideia é boa ou não.`\n:small_orange_diamond:**+piada** | `Quando você estiver sem nada para fazer e quiser se divertir um pouco, utilize este comando e faça o nosso bot lhe contar uma piada.`\n:small_orange_diamond:**+formulario** | `Com este comando você poderá fazer o seu formulário para fazer parte da equipe do servidor, respondendo a umas perguntas que o nosso bot irá lhe fazer.`')
+		.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+		.setTimestamp();
+	return message.channel.send({embed});
+		}
+	if(args[0] === "2"){
+	const embed = new Discord.RichEmbed()
+		.setColor(0x4bf442)
+		.addField('<a:minecraft_jump:551799462062718976> Lista de comandos | Página 2 de 3', ':small_orange_diamond:**+banir <membro> <motivo>** | `Caso algum membro desobedeça as regras do servidor, basta utilizar este comando para o banir, lembrando que o comando é exclusivo para staffs.`\n:small_orange_diamond:**+kickar <membro> <motivo>** | `Caso algum membro desobedeça as regras do servidor, basta utilizar este comando para o kickar, lembrando que o comando é exclusivo para staffs.`\n:small_orange_diamond:**+slash** | `Com este comando você poderá ver todos os status do servidor de mcpe e do discord.`')
+		.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+		.setTimestamp();
+	return	message.channel.send({embed});
+		}
+	if(args[0] === "3"){
+	const embed = new Discord.RichEmbed()
+		.setColor(0x4bf442)
+		.addField('<a:minecraft_jump:551799462062718976> Lista de comandos | Página 3 de 3', ':small_orange_diamond:**+desbanir <membro>** | `Com este comando você poderá desbanir algum membro que ja tenha sido banido antes.`\n:small_orange_diamond:**+clear <qauntidade>** | `Com este comando você poderá limpar uma quantia selecionada por você do chat.`\n:small_orange_diamond:**+ping** | `Com este comando você poderá Com este comando você poderá ver da API e o ping do websocket.`')
+		.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+	        .setTimestamp();
+	return message.channel.send({embed});
+	}else{
+	const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+		.addField('<a:minecraft_jump:551799462062718976> Lista de comandos | Erro', ':small_orange_diamond:Só existem 3 páginas na lista de ajuda, selecione uma utilizando +ajuda <página>')
+		.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+		.setTimestamp();
+        return message.channel.send({embed});
+           }
+	}
     if(command === "setup-captcha") {
        message.channel.send(":green_heart: **Servidores SlashMC** :green_heart:\n\n:warning: | Este é o nosso sistema de verificação dos usúarios. O que ele faz? Ele verifica se você é um `BOT (robô)`\n\n:loudspeaker: | Caso não seja um `robô` por favor clique na reação e você irá poder interagir com todos os canais do nosso servidor, caso contrário permanecerá imune aos canais do servidor.\n\n:no_entry_sign: Lembrando que enquanto você  não confirmar o captcha, você não conseguirá interagir em nenhum canal. :no_entry_sign:")
        }
