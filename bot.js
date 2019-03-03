@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./configs/piadas.json');
+const config = require('./piadas.json');
 
 const prefix = "+"
 
@@ -167,7 +167,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
     if(command === 'piada'){
 	  var PIADINHA = new Discord.RichEmbed()
 	      .setAuthor('Piadas sem piada yay :D', client.user.avatarURL)
-	      .addField('Piada:', config.piadas[Math.floor(Math.random() * config.piadas.length)], true)
+	      .addField('Piada:', config.piadas.lista[Math.floor(Math.random() * config.piadas.lista.length)], true)
 	      .setThumbnail('http://redeslash.com/dogg.jpg')
               .setColor(0xc90adb)
 	      .setFooter('Se você se riu, você não sabe o que é uma piada decente hahaha!', client.user.avatarURL)
