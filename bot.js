@@ -175,7 +175,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
 ];
 	  var PIADINHA = new Discord.RichEmbed()
 	      .setAuthor('Piadas sem piada yay :D', client.user.avatarURL)
-	      .addField('Piada:', "piadas[Math.floor(Math.random() * piadas.length)]", true)
+	      .addField('Piada:', piadas[Math.floor(Math.random() * piadas.length)], true)
 	      .setThumbnail('http://redeslash.com/dogg.jpg')
               .setColor(0xc90adb)
 	      .setFooter('Se você se riu, você não sabe o que é uma piada decente hahaha!', client.user.avatarURL)
