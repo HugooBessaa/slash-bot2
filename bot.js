@@ -24,7 +24,7 @@ let msg = message.content.toLowerCase();
 	let YTChat = message.guild.channels.find(`id`, "548895221585281044");
    if(message.member.roles.has(Staff.id) || message.channel.id === YTChat.id && message.member.roles.has(YT.id)) return;
    if (msg.includes(palavrasBlock[x])){
-	onst embed = new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 	.setColor(0xce1e00)
 	.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para enviar links neste channel!')
 	.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
