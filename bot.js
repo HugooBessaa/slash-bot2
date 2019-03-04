@@ -11,32 +11,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-
-var palavrasBlock = ["https", "http", ".com"];
-var StaffRoles = ["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Ajudante", "🚧| YouTuber"];
-var YTRoles = ["🚧| YouTuber", "🚧| MiniYT"];
-let msg = message.content.toLowerCase();
-    for (x = 0; x < StaffRoles.length; x++){
-	for (x = 0; x < YTRoles.length; x++){
-		for (x = 0; x < palavrasBlock.length; x++){
-	let Staff = message.guild.roles.find(`name`, StaffRoles[x]);
-	let YT = message.guild.roles.find(`name`, YTRoles[x]);
-	let YTChat = message.guild.channels.find(`id`, "548895221585281044");
-   if(message.member.roles.has(Staff.id) || message.channel.id === YTChat.id && message.member.roles.has(YT.id)) return;
-   if (msg.includes(palavrasBlock[x])){
-	const embed = new Discord.RichEmbed()
-	.setColor(0xce1e00)
-	.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para enviar links neste channel!')
-	.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
-	.setTimestamp();
-	await message.channel.send({embed})     
-	message.delete()
-	return;     
-            }
-        }
-    }
-}
-	
   if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -239,6 +213,30 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
               .setTimestamp();
 	   message.channel.send(PIADINHA);
        }
+var palavrasBlock = ["https", "http", ".com"];
+var StaffRoles = ["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador", "🚧| Ajudante", "🚧| YouTuber"];
+var YTRoles = ["🚧| YouTuber", "🚧| MiniYT"];
+let msg = message.content.toLowerCase();
+    for (x = 0; x < StaffRoles.length; x++){
+	for (x = 0; x < YTRoles.length; x++){
+		for (x = 0; x < palavrasBlock.length; x++){
+	let Staff = message.guild.roles.find(`name`, StaffRoles[x]);
+	let YT = message.guild.roles.find(`name`, YTRoles[x]);
+	let YTChat = message.guild.channels.find(`id`, "548895221585281044");
+   if(message.member.roles.has(Staff.id) || message.channel.id === YTChat.id && message.member.roles.has(YT.id)) return;
+   if (msg.includes(palavrasBlock[x])){
+	const embed = new Discord.RichEmbed()
+	.setColor(0xce1e00)
+	.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para enviar links neste channel!')
+	.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+	.setTimestamp();
+	await message.channel.send({embed})     
+	message.delete()
+	return;     
+            }
+        }
+    }
+}
 });
 
 client.on("raw", event => {
