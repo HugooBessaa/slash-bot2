@@ -113,7 +113,7 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para limpar o chat!')
 	.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
 	.setTimestamp();
-	return message.channel.send({embed})
+	return message.channel.send({embed});
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
