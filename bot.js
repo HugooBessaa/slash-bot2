@@ -108,7 +108,12 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Admini
 	
  if(command === "clear") {
 if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name)) )
-      return message.channel.send(`:no_entry_sign: <@${message.author.id}>, Você não tem permissão para executar esse comando.`);
+	const embed = new Discord.RichEmbed()
+	.setColor(0xce1e00)
+	.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para limpar o chat!')
+	.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+	.setTimestamp();
+	return message.channel.send({embed})
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
