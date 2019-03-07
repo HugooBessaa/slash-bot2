@@ -194,14 +194,19 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
     }
 	
     if (command === 'slash'){
-       var request = require('request');
-	request('https://api.mcsrvstat.us/1/ru.redewhinter.com:25601', function (error, response, body){
-  	var status = JSON.parse(body);
+	var request = require('request');
+	request('https://api.minetools.eu/query/jogar.redeslash.com/19132', function (error, response, body){
+	var status = JSON.parse(body);
+	if(status['status'] == "OK"){
+		$status = ":video_game: **Status: **<:corante_verde:546686138316750859> | **Jogadores:** " + status['Players'] + "/" + status['MaxPlayers'];
+	}else{
+		$status = ":video_game: **Status: **<:corante_vermelho:552995973203230737>";
+	}
     	const embed = new Discord.RichEmbed()
 	        .setAuthor('Status da SlashMC', client.user.avatarURL)
 	        .addField('<a:minecraft_jump:549209842548604978> Qual é o link da loja?', ":shopping_cart: Loja: [Clique aqui](https://redeslash.com)", true)
 	        .addField('<a:minecraft_jump:549209842548604978> Qual é o twitter do servidor?', ":bird: Twitter: [@SlashNetworkOFC](https://twitter.com/slashnetworkofc)", true)
-	        .addField('<a:enchanted_book:549211330859630592> Factions Mystic **MCPE** <a:enchanted_book:549211330859630592>', ':video_game: **IP:** jogar.redeslash.com\n:video_game: **Porta:** 19132\n:video_game: **Versão:** 1.1x\n:video_game: **Jogadores:** '+ status['players']['online'] +'/'+ status['players']['max'], false)
+	        .addField('<a:enchanted_book:549211330859630592> Factions Mystic **MCPE** <a:enchanted_book:549211330859630592>', ':video_game: **IP:** jogar.redeslash.com\n:video_game: **Porta:** 19132\n:video_game: **Versão:** 1.1x\n'+ $status, false)
 	        .setThumbnail(client.user.avatarURL)
 		.setColor(0xce1e00)
 	        .setFooter('Não se esqueça de ler as regras!', client.user.avatarURL)
