@@ -198,9 +198,9 @@ if(!message.member.roles.some(r=>["🚧| Master", "🚧| Gerente"].includes(r.na
 	request('https://api.minetools.eu/query/jogar.redeslash.com/19132', function (error, response, body){
 	var status = JSON.parse(body);
 	if(status['status'] == "OK"){
-		$status = ":video_game: **Status: **<:corante_verde:546686138316750859> | **Jogadores:** " + status['Players'] + "/" + status['MaxPlayers'];
+		$status = ":video_game: **Status: **<:corante_verde:546684879153397779> | **Jogadores:** " + status['Players'] + "/" + status['MaxPlayers'];
 	}else{
-		$status = ":video_game: **Status: **<:corante_vermelho:552995973203230737>";
+		$status = ":video_game: **Status: **<:corante_vermelho:552934258273026048>";
 	}
     	const embed = new Discord.RichEmbed()
 	        .setAuthor('Status da SlashMC', client.user.avatarURL)
