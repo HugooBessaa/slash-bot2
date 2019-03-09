@@ -11,6 +11,23 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+
+	// Anti link by @yHugoBessa
+		let palavrasBlock = ['https', 'http', '.com', '.net', '.tk', '.xyz', '.host'];
+	let encontrarNoTexto = false;
+	for(var i in palavrasBlock){
+		if(message.content.toLowerCase().includes(palavrasBlock[i].toLowerCase())) encontrarNoTexto = true;
+	}
+		if(encontrarNoTexto && !message.member.roles.some(r=>["🚧| Master", "🚧| Gerente", "🚧| Administrador", "🚧| Moderador"].includes(r.name))){
+			message.delete();
+			const embed = new Discord.RichEmbed()
+		.setColor(0xce1e00)
+		.addField('<a:minecraft_jump:549209842548604978> Sem permissão', ':no_entry_sign: Você não tem permissão para enviar links neste channel!')
+		.setFooter('Servidores SlashMC • © Todos os direitos reservados.', client.user.avatarURL)
+		.setTimestamp();
+		message.channel.send({embed})
+		}
+	// Anti link by @yHugoBessa //
   if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
