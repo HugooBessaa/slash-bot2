@@ -254,7 +254,7 @@ let msg = message.content.toLowerCase();
 client.on("raw", event => {
 	const eventName = event.t;
      if(eventName === 'MESSAGE_REACTION_ADD'){
-	   if(event.d.message_id === '550825144298373140'){
+	   if(event.d.message_id === '555408530061000705'){
 		 var reactionChannel = client.channels.get(event.d.channel_id);
 		   if(reactionChannel.messages.has(event.d.message_id))
 			   return;
